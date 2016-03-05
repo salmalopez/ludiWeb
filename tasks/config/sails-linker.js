@@ -27,6 +27,19 @@ module.exports = function(grunt) {
 				'views/**/*.ejs': require('../pipeline').jsFilesToInject
 			}
 		},
+		devJsOUT: {
+			options: {
+				startTag: '<!--SCRIPTS-OUT-->',
+				endTag: '<!--SCRIPTS-OUT END-->',
+				fileTmpl: '<script src="%s"></script>',
+				appRoot: '.tmp/public'
+			},
+			files: {
+				'.tmp/public/**/*.html': require('../pipeline').jsFilesToInjectOUT,
+				'views/**/*.html': require('../pipeline').jsFilesToInjectOUT,
+				'views/**/*.ejs': require('../pipeline').jsFilesToInjectOUT
+			}
+		},
 
 		devJsRelative: {
 			options: {
@@ -84,6 +97,20 @@ module.exports = function(grunt) {
 				'.tmp/public/**/*.html': require('../pipeline').cssFilesToInject,
 				'views/**/*.html': require('../pipeline').cssFilesToInject,
 				'views/**/*.ejs': require('../pipeline').cssFilesToInject
+			}
+		},
+		devStylesOUT: {
+			options: {
+				startTag: '<!--STYLES-OUT-->',
+				endTag: '<!--STYLES-OUT END-->',
+				fileTmpl: '<link rel="stylesheet" href="%s">',
+				appRoot: '.tmp/public'
+			},
+
+			files: {
+				'.tmp/public/**/*.html': require('../pipeline').cssFilesToInjectOUT,
+				'views/**/*.html': require('../pipeline').cssFilesToInjectOUT,
+				'views/**/*.ejs': require('../pipeline').cssFilesToInjectOUT
 			}
 		},
 

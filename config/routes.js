@@ -36,6 +36,28 @@ module.exports.routes = {
   'GET /': 'AppController.main',
   'GET /:param': 'AppController.main',
 
+  
+
+  'GET /api/profile': 'LoginController.profile',
+  'POST /login': 'LoginController.login',
+
+
+  
+  'POST /api/school' : 'SchoolsController.save',
+  'GET /api/school' : 'SchoolsController.get',
+  'GET /api/school/:id' : 'SchoolsController.get',
+  'DELETE /api/school/:id' : 'SchoolsController.destroy',
+  'PUT /api/school' : 'SchoolsController.update',
+
+
+
+
+  'POST /api/user' : 'UserController.save',
+  'GET /api/user' : 'UserController.get',
+  'GET /api/user/:id' : 'UserController.get',
+  'DELETE /api/user/:id' : 'UserController.destroy',
+  'PUT /api/user' : 'UserController.update'
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

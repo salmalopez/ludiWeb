@@ -16,7 +16,11 @@ var tmpPath = '.tmp/public/';
 // (if you're using LESS with the built-in default config, you'll want
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
-  'styles/**/*.css'
+  'IN/styles/**/*.css'
+];
+
+var cssFilesToInjectOUT = [
+  'OUT/styles/**/*.css'
 ];
 
 
@@ -25,14 +29,30 @@ var cssFilesToInject = [
 var jsFilesToInject = [
 
   // Load sails.io before everything else
-  'js/dependencies/sails.io.js',
+  'IN/js/dependencies/sails.io.js',
 
   // Dependencies like jQuery, or Angular are brought in here
-  'js/dependencies/**/*.js',
+  'IN/js/dependencies/**/*.js',
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
-  'js/**/*.js',
+  'IN/js/**/*.js',
+
+  // Use the "exclude" operator to ignore files
+  // '!js/ignore/these/files/*.js'
+];
+
+var jsFilesToInjectOUT = [
+
+  // Load sails.io before everything else
+  'OUT/js/dependencies/sails.io.js',
+
+  // Dependencies like jQuery, or Angular are brought in here
+  'OUT/js/dependencies/**/*.js',
+
+  // All of the rest of your client-side js files
+  // will be injected here in no particular order.
+  'OUT/js/**/*.js',
 
   // Use the "exclude" operator to ignore files
   // '!js/ignore/these/files/*.js'
@@ -58,7 +78,9 @@ var templateFilesToInject = [
 // (i.e. where the other Grunt tasks spit them out, or in some cases, where
 // they reside in the first place)
 module.exports.cssFilesToInject = cssFilesToInject.map(transformPath);
+module.exports.cssFilesToInjectOUT = cssFilesToInjectOUT.map(transformPath);
 module.exports.jsFilesToInject = jsFilesToInject.map(transformPath);
+module.exports.jsFilesToInjectOUT = jsFilesToInjectOUT.map(transformPath);
 module.exports.templateFilesToInject = templateFilesToInject.map(transformPath);
 
 // Transform paths relative to the "assets" folder to be relative to the public
