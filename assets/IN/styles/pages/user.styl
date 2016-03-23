@@ -1,47 +1,67 @@
 .bg-user
-	.panel 
-		background-color : rgba(255,255,255,0.7)
-		border-radius : 10px
-		::-webkit-input-placeholder
-			font-size : 20px
-			color : #ddd
+	.bg-panel
+		background-color : rgba(255,255,255,1)
+		box-shadow :  5px 2px 6px rgba(0,0,0,0.2)
+		border-radius : 0px
+		::-webkit-input-placeholder 
+			opacity: 1
+			transition: inherit
+			font-size : 15px
+		input:focus::-webkit-input-placeholder
+			opacity: 0
+		input:focus
+			outline : none
+			border-bottom: 1px solid #536dfe !important
 		input
-			margin-bottom : 15px
+			outline: none
+			border: none !important
+			-webkit-box-shadow: none !important
+			-moz-box-shadow: none !important
+			box-shadow: none !important
+			//margin-bottom : 15px
 			height : 50px
+			transition: all 0.5s
+			border-bottom: 1px solid #ccc !important
+			font-family: inherit
+			-webkit-appearance: none
+			border-radius: 0
+			padding: 0
+			cursor: text
 		.button
-			height : 50px
+			height : 40px
 			width : 100%
 			border : none
-			background-color : #81DAF5
-			border-radius : 10px
+			background-color : #536dfe
+			border-radius : 0px
 			color : #fff
-			font-size : 20px
+			margin-top : 10px
+			font-size : 15px
+		.table-hover tbody tr:hover td, .table-hover tbody tr:hover th
+			background-color: #d1c4e9
+			color : #fff
+		table
+			font-size : 12px
+		th
+			a
+				color : #536dfe
+		.error
+			color : #d1c4e9
+			font-size : 12px
+
 	.row
 		margin : 0px
 	h1
 		font-size : 100px
+		font-weight : 900
 		color : #82FA58
 		text-shadow: 2px 2px #000
 		margin : 5px 0px 5px 0px
 	h2
-		font-size : 80px
-		color : #82FA58
-		text-shadow: 2px 2px #000
-	padding-top : 150px
-	background-image: url('/images/usuarios_bg.jpg')
-	background-attachment: fixed
-	background-position: top right
-	background-repeat: no-repeat
-	background-size: cover
+		font-size : 20px
+	padding-top : 100px
+	//background-color : #673ab7
+	background-color : #fff
 	content: ''
 	display: block
 	height: 800px
 	width: 100%
-	.panel-description
-		background-color : rgba(255,255,255,0.7)
-		
-.user-content
-	margin-top : 20px
-	table
-		font-size : 25px
-		

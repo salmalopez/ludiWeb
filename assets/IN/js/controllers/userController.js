@@ -4,6 +4,9 @@ angular.module('user-module',['user.module'])
 		$scope.userU = {};
 		$scope.users = [];
 		$scope.search = '';
+		$scope.schoolD = {};
+		$scope.successForm = false;
+		$scope.successDelete = false;
 		getUsers();
 		function getUsers(){
 			User.get().then(function(response){
@@ -15,6 +18,7 @@ angular.module('user-module',['user.module'])
 		$scope.remove = function(id){
 			console.log(id);
 			User.destroy(id).then(function(response){
+				$scope.successDelete = true;
 				getUsers();
 			});
 		};
@@ -26,6 +30,12 @@ angular.module('user-module',['user.module'])
 			});
 		};
 
+		$scope.modalDelete = function(id){
+			$scope.successDelete = false;
+			console.log(id);
+			$scope.schoolD = id;
+		};
+
 		$scope.update = function(){
 			User.updateUser($scope.userU).then(function(response){
 				getUsers();
@@ -35,6 +45,7 @@ angular.module('user-module',['user.module'])
 		$scope.submit = function(){
 			console.log($scope.user);
 			User.save($scope.user).then(function(response){
+				$scope.successForm = true;
 				getUsers();
 			},function(err){
 

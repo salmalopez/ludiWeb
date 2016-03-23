@@ -1,39 +1,32 @@
 .navbar-default
-	background-color : #7d5cc6
-	border-color : #7d5cc6
-	font-size : 20px
+	background-color : #512da8
+	border-color : #512da8
+	box-shadow : 3px 3px 10px #000
+	font-size : 18px
+	
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover
+	color : #fff
 
 .navbar-default .navbar-nav >li >a
 	color : #fff
-	transition: 1s ease
 	
 .navbar-default .navbar-nav >li >a:hover
-	color : #82FA58
-	//background-color : #c0251e
+	color : #fff !important
 	
-.active
-	//background-color : #D0A9F5
-	color : #82FA58
-	
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav>.active>a:focus,
-.navbar-default .navbar-nav>.active>a:visited,
-.navbar-default .navbar-nav>.active>a:hover
-	color : #82FA58
-	background-color : #7d5cc6
-	
-.navbar-default .navbar-nav>.open>a,
-.nav .open>a,
-.navbar-default .navbar-nav>.open>a, 
-.navbar-default .navbar-nav>.open>a:focus,
-.navbar-default .navbar-nav>.open>a:visited, 
-.navbar-default .navbar-nav>.open>a:hover
-	background-color : #7d5cc6
+.activeNav
+	border-bottom : 3px solid #536dfe
 	color : #fff
+	
+.navbar-default .navbar-nav >li :hover
+	border-bottom : 3px solid #536dfe
+	color : #fff
+	//background-color : #c0251e
+
 	
 .navbar .navbar-nav 
 	display: inline-block
-	float: none
+	float: right
 	vertical-align: top
 	
 .navbar .navbar-collapse 

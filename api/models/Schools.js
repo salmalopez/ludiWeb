@@ -11,7 +11,7 @@ module.exports = {
 		name : {
 			type : 'string',
 			required : true,
-			minLength : 5
+			minLength : 4
 		},
 		entity : {
 			type : 'string',

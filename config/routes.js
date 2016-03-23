@@ -40,6 +40,7 @@ module.exports.routes = {
 
   'GET /api/profile': 'LoginController.profile',
   'POST /login': 'LoginController.login',
+  'POST /loginApp' : 'LoginController.loginApp',
 
 
   

@@ -37,5 +37,20 @@ module.exports = {
         }catch(err){
             res.render('500');
         }
+    },
+    loginApp: function(req,res){
+        console.log(req.body);
+        try{
+            UserService.getLoginApp()
+        }catch(err){
+            res.render('500');
+        }
     }
 };
+
+
+
+
+
+
+

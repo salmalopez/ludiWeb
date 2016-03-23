@@ -11,21 +11,8 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li ng-repeat="i in items">
+        <li ng-repeat="i in items" ng-class="{'activeNav': i.id == states.activeItem}" ng-click="states.activeItem=i.id">
           <a href="" ui-sref="{{i.template}}">{{i.title}}</a>
-        </li>
-        
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li role="presentation" class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-            Usuario <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a>Perfil</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a>Salir</a></li>
-          </ul>
         </li>
       </ul>
     </div>
@@ -34,9 +21,14 @@
 <div ui-view autoscroll="true">
   <section class="bg-home animated fadeIn">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2 text-center animated bounceInDown">
-        <h1>LUDI</h1>
-        <h2>Aplicación para shalalalalala</h2>
+      <div class="col-md-8 text-center animated bounceInDown">
+        <h2>LUDI</h2>
+      </div>
+    </div>
+    <div class="row home-subtitle">
+      <div class="col-md-8"></div>
+      <div class="col-md-4 text-right delay-subtitle animated fadeIn ">
+        <h3>Aprende como alimentarte de una manera fácil y divertida</h3>
       </div>
     </div>
   </section>

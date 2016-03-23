@@ -32,5 +32,13 @@ module.exports = {
 			if (err) throw err;
 			next(updated[0]);
 		});
+	},
+	getLoginApp : function(user,next){
+		User.find({id:id}).exec(function(err,User){
+			if(err) throw err;
+			next({
+				messagge : 'OK'
+			})
+		})
 	}
 }

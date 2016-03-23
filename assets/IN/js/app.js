@@ -10,35 +10,49 @@ angular.module('adminApp',['ui.router','user-module','school-module'])
 		$stateProvider
 			.state('home', {
                 url: '/',
-                templateUrl: '/templates/home.html',
+                templateUrl: 'IN/templates/home.html',
                 controller: 'homeController'
             })
             .state('home.noticias', {
                 url: 'noticias',
-                templateUrl: '/templates/noticias.html',
+                templateUrl: 'IN/templates/noticias.html',
                 controller: 'homeController'
             })
             .state('home.escuelas', {
                 url: 'escuelas',
-                templateUrl: '/templates/escuelas.html',
+                templateUrl: 'IN/templates/escuelas.html',
                 controller: 'school-controller'
             })
             .state('home.usuarios', {
                 url: 'usuarios',
-                templateUrl: '/templates/usuarios.html',
+                templateUrl: 'IN/templates/usuarios.html',
                 controller: 'user-controller'
             })
             ;
 	})
-	.controller('homeController',function($scope){
+	.controller('homeController',function($scope,$location){
 		$scope.states = {};
-    	$scope.states.activeItem = '0';
-
-		$scope.active = function(id){
-			console.log(id);
-			$scope.states.activeItem = id;
-			console.log($scope.states.activeItem);
-		};
+    	activeItem($location.path());
+    	function activeItem(url){
+    		switch(url){
+    			case '/':
+    				$scope.states.activeItem = '0';
+    				break;
+    			case '/escuelas' :
+    				$scope.states.activeItem = '1';
+    				break;
+    			case '/noticias' :
+    				$scope.states.activeItem = '2';
+    				break;
+    			case '/usuarios' :
+    				$scope.states.activeItem = '3';
+    				break;
+    			default : 
+    				$scope.states.activeItem = '0';
+    				break;
+    		}
+    			
+    	}
 
 		$scope.items = [
 			{
