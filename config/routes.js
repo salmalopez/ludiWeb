@@ -50,6 +50,12 @@ module.exports.routes = {
   'DELETE /api/school/:id' : 'SchoolsController.destroy',
   'PUT /api/school' : 'SchoolsController.update',
 
+  'POST /api/news' : 'NewsController.save',
+  'GET /api/news' : 'NewsController.get',
+  'GET /api/news/:id' : 'NewsController.get',
+  'DELETE /api/news/:id' : 'NewsController.destroy',
+  'PUT /api/news' : 'NewsController.update',
+
 
 
 

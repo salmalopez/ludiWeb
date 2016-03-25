@@ -7,7 +7,11 @@ angular.module('user-module',['user.module'])
 		$scope.schoolD = {};
 		$scope.successForm = false;
 		$scope.successDelete = false;
+		$scope.successUpdate = false;
+		$scope.currentPage = 1;
+  		$scope.pageSize = 4;
 		getUsers();
+		
 		function getUsers(){
 			User.get().then(function(response){
 				$scope.users = response.data;
@@ -30,6 +34,10 @@ angular.module('user-module',['user.module'])
 			});
 		};
 
+		$scope.updateFalse = function(){
+			$scope.successUpdate = false;
+		}
+
 		$scope.modalDelete = function(id){
 			$scope.successDelete = false;
 			console.log(id);
@@ -38,6 +46,7 @@ angular.module('user-module',['user.module'])
 
 		$scope.update = function(){
 			User.updateUser($scope.userU).then(function(response){
+				$scope.successUpdate = true;
 				getUsers();
 			})
 		};
@@ -54,3 +63,14 @@ angular.module('user-module',['user.module'])
 		};
 
 	})
+	.controller('pagination.controller',function($scope){
+		$scope.pageChangeHandler = function(num) {
+    		console.log('going to page ' + num);
+  		};
+	})
+
+
+
+
+
+

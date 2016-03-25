@@ -1,4 +1,4 @@
-angular.module('adminApp',['ui.router','user-module','school-module'])
+angular.module('adminApp',['ui.router','user-module','school-module','news-module'])
 	.run(function($rootScope){
 		
 	})
@@ -16,7 +16,7 @@ angular.module('adminApp',['ui.router','user-module','school-module'])
             .state('home.noticias', {
                 url: 'noticias',
                 templateUrl: 'IN/templates/noticias.html',
-                controller: 'homeController'
+                controller: 'news-controller'
             })
             .state('home.escuelas', {
                 url: 'escuelas',
@@ -65,15 +65,15 @@ angular.module('adminApp',['ui.router','user-module','school-module'])
 				title : 'Gestión de Escuelas',
 				template : 'home.escuelas'
 			},
+            {
+                id : '3',
+                title : 'Gestión de Usuarios',
+                template : 'home.usuarios'
+            },
 			{
 				id : '2',
 				title : 'Gestión de Noticias',
 				template : 'home.noticias'
-			},
-			{
-				id : '3',
-				title : 'Gestión de Usuarios',
-				template : 'home.usuarios'
 			}
 		];
 	})
