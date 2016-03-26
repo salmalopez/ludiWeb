@@ -21,6 +21,7 @@ var cssFilesToInject = [
 
 var cssFilesToInjectOUT = [
   'OUT/styles/**/*.css'
+
 ];
 
 

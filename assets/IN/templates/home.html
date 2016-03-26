@@ -14,6 +14,9 @@
         <li ng-repeat="i in items" ng-class="{'activeNav': i.id == states.activeItem}" ng-click="states.activeItem=i.id">
           <a href="" ui-sref="{{i.template}}">{{i.title}}</a>
         </li>
+        <li>
+          <a href="/logout" target="_top">Cerrar Sesión</a>
+        </li>
       </ul>
     </div>
   </div>

@@ -24,12 +24,12 @@ passport.use(new LocalStrategy({
         return done(null, false, { message: 'Email incorrecto.' });
       }
 
-      bcrypt.compare(password, user.password, function (err, res) {
-          if (!res)
-            return done(null, false, {
+      if(password != user.password){
+          return done(null, false, {
               message: 'Contraseña incorrecta.'
             });
-          var returnUser = {
+      }else{
+        var returnUser = {
             email: user.email,
             createdAt: user.createdAt,
             id: user.id
@@ -37,7 +37,9 @@ passport.use(new LocalStrategy({
           return done(null, returnUser, {
             message: 'OK'
           });
-        });
+      }
+
+    
     });
   }
 ));

@@ -1,42 +1,551 @@
 <!DOCTYPE html>
 <html ng-app="adminApp">
   <head>
-    <title>Administrador</title>
+    <title>LUDI</title>
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light|Amatic+SC' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/OUT/fonts/font-awesome/css/font-awesome.css">
     <!--STYLES-OUT-->
     <link rel="stylesheet" href="/OUT/styles/animate.css">
     <link rel="stylesheet" href="/OUT/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="/OUT/styles/font-awesome.min.css">
     <link rel="stylesheet" href="/OUT/styles/importer.css">
     <link rel="stylesheet" href="/OUT/styles/normalize.css">
+    <link rel="stylesheet" href="/OUT/styles/owl.carousel.css">
+    <link rel="stylesheet" href="/OUT/styles/owl.theme.css">
+    <link rel="stylesheet" href="/OUT/styles/responsive.css">
+    <link rel="stylesheet" href="/OUT/styles/style.css">
     <!--STYLES-OUT END-->
   </head>
-
   <body>
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 col-md-4 col-md-offset-4">
-                <h1 class="text-center login-title">LOGIN</h1>
-                <div class="account-wall">
-                    <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
-                        alt="">
-                    <form class="form-signin">
-                    <input type="text" ng-model="profile.email" class="form-control" placeholder="Correo electrónico">
-                    <input type="password" ng-model="profile.password" class="form-control" placeholder="Contraseña">
-                    <button ng-click="login()" class="btn btn-lg btn-primary btn-block" type="submit">
-                        Ingresar</button>
-                    
-                    </form>
+
+    <!-- Navigation
+    ==========================================-->
+    <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top animated fadeIn">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">LUDI</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#tf-home" class="page-scroll">Inicio</a></li>
+            <li><a href="#tf-about" class="page-scroll">Acerca de</a></li>
+            <li><a href="#tf-team" class="page-scroll">Equipo</a></li>
+            <li><a href="#tf-services" class="page-scroll">Objetivos</a></li>
+            <li><a href="#tf-works" class="page-scroll">Alimentación</a></li>
+            <li><a href="#tf-testimonials" class="page-scroll">Conclusiones</a></li>
+            <li><a href="#tf-contact" class="page-scroll">Log In</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <!-- Home Page
+    ==========================================-->
+    <div id="tf-home" class="text-center">
+        <div class="overlay">
+            <div class="content">
+                <h1 class="animated slideInLeft">BIENVENIDO A <strong><span class="color">LUDI</span></strong></h1>
+                <p class="lead animated slideInRight">La aplicación para dispositivos inteligentes que te ayudará a tener una <strong>mejor alimentación</strong> utilizando <strong>realidad aumentada</strong></p>
+                <a href="#tf-about" class="fa fa-angle-down page-scroll"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Us Page
+    ==========================================-->
+    <div id="tf-about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="img-responsive" src="/OUT/images/about.jpg" class="img-responsive">
+                </div>
+                <div class="col-md-6">
+                    <div class="about-text">
+                        <div class="section-title">
+                            <h2><strong>¿QUÉ ES LUDI?</strong></h2>
+                            <hr>
+                            <div class="clearfix"></div>
+                        </div>
+                        <p class="intro">LUDI es una aplicación dirigida a niños de entre 10 y 12 años que tiene como objetivo promover una dieta correcta a partir del conocimiento del plato del bien comer y de la jarra del buen beber de manera didáctica, utilizando realidad aumentada de tal manera que los niños reciban información y consejos que pueden mejorar sus hábitos alimenticios.</p>
+                        <p class="intro">Este proyecto trata de atender una de las problemáticas nacionales más importantes que se tienen hoy en día: los malos hábitos alimenticios de los niños, los cuales a su vez pueden ser causantes de enfermedades que incluso pueden llegar a poner en riesgo su vida, tales como la obesidad e hipertensión entre otras.</p>
+                        
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!--SCRIPTS-OUT -->
+    <!-- Team Page
+    ==========================================-->
+    <div id="tf-team" class="text-center">
+        <div class="overlay">
+            <div class="container">
+                <div class="section-title center">
+                    <h2>Nuestro <strong>Equipo</strong></h2>
+                    <div class="line">
+                        <hr>
+                    </div>
+                </div>
+
+                <div id="team" class="owl-carousel owl-theme row">
+                    <div class="item">
+                        <div class="thumbnail">
+                            <img src="/OUT/images/team/abi.jpg" alt="..." class="img-circle team-img">
+                            <div class="caption">
+                                <h3>Salma Abigail López</h3>
+                                <p>Ing. Sistemas</p>
+                                <p>Pequeña descripción del perfil, habilidades y objetivos de la persona.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="thumbnail">
+                            <img src="/OUT/images/team/profile.jpg" alt="..." class="img-circle team-img">
+                            <div class="caption">
+                                <h3>José Luis Mendoza</h3>
+                                <p>Ing. Sistemas</p>
+                                <p>Pequeña descripción del perfil, habilidades y objetivos de la persona.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="thumbnail">
+                            <img src="/OUT/images/team/profile.jpg" alt="..." class="img-circle team-img">
+                            <div class="caption">
+                                <h3>Diana Karen Montero</h3>
+                                <p>Ing. Sistemas</p>
+                                <p>Pequeña descripción del perfil, habilidades y objetivos de la persona.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="thumbnail">
+                            <img src="/OUT/images/team/profile.jpg" alt="..." class="img-circle team-img">
+                            <div class="caption">
+                                <h3>Director 1</h3>
+                                <p>M en C.</p>
+                                <p>Pequeña descripción del perfil, habilidades y objetivos de la persona.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="thumbnail">
+                            <img src="/OUT/images/team/profile.jpg" alt="..." class="img-circle team-img">
+                            <div class="caption">
+                                <h3>Director 2</h3>
+                                <p>M en C.</p>
+                                <p>Pequeña descripción del perfil, habilidades y objetivos de la persona.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="thumbnail">
+                            <img src="/OUT/images/team/profile.jpg" alt="..." class="img-circle team-img">
+                            <div class="caption">
+                                <h3>Sinodal 1</h3>
+                                <p>M en C.</p>
+                                <p>Pequeña descripción del perfil, habilidades y objetivos de la persona.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="thumbnail">
+                            <img src="/OUT/images/team/profile.jpg" alt="..." class="img-circle team-img">
+                            <div class="caption">
+                                <h3>Sinodal 2</h3>
+                                <p>M en C.</p>
+                                <p>Pequeña descripción del perfil, habilidades y objetivos de la persona.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="thumbnail">
+                            <img src="/OUT/images/team/profile.jpg" alt="..." class="img-circle team-img">
+                            <div class="caption">
+                                <h3>Sinodal 3</h3>
+                                <p>M en C.</p>
+                                <p>Pequeña descripción del perfil, habilidades y objetivos de la persona.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section
+    ==========================================-->
+    <div id="tf-services" class="text-center">
+        <div class="container">
+            <div class="section-title center">
+                <h2><strong>Objetivos</strong>Generales y <strong>Objetivos</strong> Específicos</h2>
+                <div class="line">
+                    <hr>
+                </div>
+                <div class="clearfix"></div>
+                <small><em>Implementar un sistema de apoyo nutricional para niños de 10 a 12 años utilizando realidad aumentada,  en conjunto con dispositivos móviles, con el fin de que puedan interactuar con elementos digitales, para  recibir información y consejos relevantes respecto a sus hábitos alimenticios.</em></small>
+            </div>
+            <div class="space"></div>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 service">
+                    <i class="fa fa-book"></i>
+                    <h4><strong>Cuadernillo Interactivo</strong></h4>
+                    <p>Elaborar un cuadernillo que contendrá material de apoyo con códigos QR y marcadores.</p>
+                </div>
+
+                <div class="col-md-3 col-sm-6 service">
+                    <i class="fa fa-mobile"></i>
+                    <h4><strong>Dispositivos Móviles</strong></h4>
+                    <p>Implementar un sistema para interfaces multimedia utilizando realidad aumentada en dispositivos móviles.</p>
+                </div>
+
+                <div class="col-md-3 col-sm-6 service">
+                    <i class="fa fa-camera"></i>
+                    <h4><strong>Material Multimedia</strong></h4>
+                    <p>Elaborar materiales multimedia que sirvan de apoyo en el contenido de cada una de las actividades que el niño desarrollará.</p>
+                </div>
+
+                <div class="col-md-3 col-sm-6 service">
+                    <i class="fa fa-bullhorn"></i>
+                    <h4><strong>Comunicación</strong></h4>
+                    <p>Implementar un mecanismo de comunicación unidireccional hacia los usuarios del sistema con fines informativos y de actualización.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clients Section
+    ==========================================-->
+    <div id="tf-clients" class="text-center">
+        <div class="overlay">
+            <div class="container">
+
+                <div class="section-title center">
+                    <h2><strong>Tecnologías</strong> utilizadas</h2>
+                    <div class="line">
+                        <hr>
+                    </div>
+                </div>
+                <div id="clients" class="owl-carousel owl-theme">
+                    <div class="item">
+                        <img src="/OUT/images/software/android.png" width="150px" height="100px">
+                    </div>
+                    <div class="item">
+                        <img src="/OUT/images/software/java.png" width="150px" height="150px">
+                    </div>
+                    <div class="item">
+                        <img src="/OUT/images/software/mysql.png" width="150px" height="100px">
+                    </div>
+                    <div class="item">
+                        <img src="/OUT/images/software/node.png" width="150px" height="150px">
+                    </div>
+                    <div class="item">
+                        <img src="/OUT/images/software/html.png" width="150px" height="150px">
+                    </div>
+                    <div class="item">
+                        <img src="/OUT/images/software/css.png" width="150px" height="150px">
+                    </div>
+                    <div class="item">
+                        <img src="/OUT/images/software/angular.png" width="150px" height="150px">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Section
+    ==========================================-->
+    <div id="tf-works">
+        <div class="container"> <!-- Container -->
+            <div class="section-title text-center center">
+                <h2>Plato del Buen Comer y  <strong>Jarra del Buen Beber</strong></h2>
+                <div class="line">
+                    <hr>
+                </div>
+                <div class="clearfix"></div>
+                <small><em>El Plato del Bien Comer es una representación gráfica de los grupos de alimentos que funciona como guía alimentaria. Esto quiere decir que su objetivo es proporcionar las recomendaciones para lograr una alimentación correcta entre la población general.</em></small>
+                <small><em>Con el fin de proporcionar orientación en lo relativo a los beneficios y riesgos de la salud y nutrición de varias categorías de bebidas, la Secretaría de Salud Convocó a un comité de científicos expertos que realizó una exhaustiva revisión a la literatura disponible del consumo de bebidas y su impacto en la salud, para la estructuración de las “Recomendaciones sobre el consumo de bebidas para una vida saludable”. Estas recomendaciones representan una herramienta para el consumidor, los profesionales de la salud y el gobierno mexicano para promover patrones de consumo de bebidas más saludables. </em></small>
+            </div>
+            <div class="space"></div>
+
+            <div class="categories">
+                
+                <ul class="cat">
+                    <li class="pull-left"><h4>Selecciona un tipo de comida:</h4></li>
+                    <li class="pull-right">
+                        <ol class="type">
+                            <li><a href="#" data-filter="*" class="active">Todos</a></li>
+                            <li><a href="#" data-filter=".pwc">Plato del Buen Comer</a></li>
+                            <li><a href="#" data-filter=".jbb">Jarra del Buen Beber</a></li>
+                            <li><a href="#" data-filter=".cc" >Comida Chatarra</a></li>
+                        </ol>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+
+            <div id="lightbox" class="row">
+
+                <div class="col-sm-6 col-md-3 col-lg-3 pwc">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="">
+                                <div class="hover-text">
+                                    <h4>Plato del Buen Comer</h4>
+                                    <small>Frutas y Verduras</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="/OUT/images/portfolio/p1.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 photography pwc">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Plato del Buen Comer</h4>
+                                    <small>Ensaladas</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="/OUT/images/portfolio/p2.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 pwc">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Plato del Buen Comer</h4>
+                                    <small>Frutas y Verduras</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="/OUT/images/portfolio/p3.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 jbb">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Jarra del Buen Beber</h4>
+                                    <small>Jugo de Naranja</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="/OUT/images/portfolio/b1.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 jbb">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Jarra del Buen Beber</h4>
+                                    <small>Jugos</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="/OUT/images/portfolio/b2.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 jbb">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="/OUT/images/portfolio/b3.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 photography cc">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Comida Chatarra</h4>
+                                    <small>Hamburguesas</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="/OUT/images/portfolio/c1.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 cc">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Comida Chatarra</h4>
+                                    <small>Frituras</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="/OUT/images/portfolio/c2.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section
+    ==========================================-->
+    <div id="tf-testimonials" class="text-center">
+        <div class="overlay">
+            <div class="container">
+                <div class="section-title center">
+                    <h2>Conclusiones</h2>
+                    <div class="line">
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div id="testimonial" class="owl-carousel owl-theme">
+                            <div class="item">
+                                <h5>Pequeña conclusión y punto de vista del proyecto</h5>
+                                <p><strong>Salma Abigal</strong>, Ing. Sistemas</p>
+                            </div>
+
+                            <div class="item">
+                                 <h5>Pequeña conclusión y punto de vista del proyecto</h5>
+                                <p><strong>José</strong>, Ing. Sistemas</p>
+                            </div>
+
+                            <div class="item">
+                                 <h5>Pequeña conclusión y punto de vista del proyecto</h5>
+                                <p><strong>Diana</strong>, Ing. Sistemas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section
+    ==========================================-->
+    <div id="tf-contact" class="text-center">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+
+                    <div class="section-title center">
+                        <h2>Entra a <strong>LUDI</strong></h2>
+                        <div class="line">
+                            <hr>
+                        </div>
+                        <div class="clearfix"></div>
+                        <small><em>Ingresa tu usuario y contraseña proporcionados por el administrador</em></small>            
+                    </div>
+
+                    <form ng-controller="userController">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Correo</label>
+                                    <input type="text" ng-model="profile.email" class="form-control" id="exampleInputEmail1" placeholder="Ingresa tu email">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" ng-model="profile.password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button ng-click="login()" type="submit" class="btn tf-btn btn-default">entrar</button>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <nav id="footer">
+        <div class="container">
+            <div class="pull-left fnav">
+            </div>
+            <div class="pull-right fnav">
+                <ul class="footer-social">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--SCRIPTS-OUT-->
+    <script src="/OUT/js/dependencies/sails.io.js"></script>
+    <script src="/OUT/js/dependencies/angular.min.js"></script>
+    <script src="/OUT/js/dependencies/jquery.min.js"></script>
+    <script src="/OUT/js/app.js"></script>
+    <script src="/OUT/js/controllers/userController.js"></script>
+    <script src="/OUT/js/libs/SmoothScroll.js"></script>
+    <script src="/OUT/js/libs/angular-ui-router.min.js"></script>
+    <script src="/OUT/js/libs/bootstrap.min.js"></script>
+    <script src="/OUT/js/libs/jquery.isotope.js"></script>
+    <script src="/OUT/js/libs/main.js"></script>
+    <script src="/OUT/js/libs/modernizr.custom.js"></script>
+    <script src="/OUT/js/libs/owl.carousel.js"></script>
+    <script src="/OUT/js/services/userService.js"></script>
     <!--SCRIPTS-OUT END-->
   </body>
 </html>

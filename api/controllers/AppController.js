@@ -14,12 +14,11 @@ module.exports = {
    */
   main: function (req, res) {
   	try{
-  		if(!req.user){
+  		if(req.user){
 	  		res.view('admin',{layout:'admin'});
-	  	}
-      /*else{
+	  	}else{
 	  		res.view('login',{layout:'login'});
-	  	}*/
+	  	}
   	}catch(err){
   		console.log(err);
   		res.render('500');

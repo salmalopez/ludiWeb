@@ -1,5 +1,6 @@
 angular.module('user.module',['user.service'])
 	.controller('userController',function($scope,User,$window){
+		console.log("Cargo");
 		$scope.profile = {};
 		$scope.formMessage = '';
 		$scope.login = function(){

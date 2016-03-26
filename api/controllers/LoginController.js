@@ -32,6 +32,7 @@ module.exports = {
     },
     logout: function(req, res) {
         try{
+            console.log("Entro");
             req.logout();
             res.redirect('/');
         }catch(err){
