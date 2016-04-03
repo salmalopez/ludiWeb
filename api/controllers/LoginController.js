@@ -31,9 +31,7 @@ module.exports = {
         })(req, res);
     },
     logout: function(req, res) {
-        console.log("Entro");
         try{
-            console.log("Entro");
             req.logout();
             res.redirect('/');
         }catch(err){

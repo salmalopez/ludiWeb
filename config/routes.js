@@ -39,8 +39,8 @@ module.exports.routes = {
   
 
   'GET /api/profile': 'LoginController.profile',
-  'POST /login': 'LoginController.login',
-  'GET /logout': 'LoginController.logout',
+  'POST /api/login': 'LoginController.login',
+  '/api/logout': 'LoginController.logout',
   'POST /loginApp' : 'LoginController.loginApp',
 
 
@@ -50,6 +50,8 @@ module.exports.routes = {
   'GET /api/school/:id' : 'SchoolsController.get',
   'DELETE /api/school/:id' : 'SchoolsController.destroy',
   'PUT /api/school' : 'SchoolsController.update',
+
+
 
   'POST /api/news' : 'NewsController.save',
   'GET /api/news' : 'NewsController.get',

@@ -14,7 +14,7 @@ angular.module('user.module', [])
 				return $http.put('/api/user/',data);
 			},
 			destroy : function(id){
-				return $http.delete('/api/user/'+id)
+				return $http.delete('/api/user/'+id);
 			}
 		}
 	})

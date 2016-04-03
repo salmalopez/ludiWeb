@@ -1,4 +1,4 @@
-angular.module('adminApp',['ui.router','user-module','school-module','news-module'])
+angular.module('adminApp',['ui.router','user-module','school-module','news-module','user.module'])
 	.run(function($rootScope){
 		
 	})
@@ -30,7 +30,7 @@ angular.module('adminApp',['ui.router','user-module','school-module','news-modul
             })
             ;
 	})
-	.controller('homeController',function($scope,$location){
+	.controller('homeController',function($scope,$location,User){
 		$scope.states = {};
     	activeItem($location.path());
     	function activeItem(url){
