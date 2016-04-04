@@ -41,7 +41,7 @@ module.exports.routes = {
   'GET /api/profile': 'LoginController.profile',
   'POST /api/login': 'LoginController.login',
   '/api/logout': 'LoginController.logout',
-  'POST /loginApp' : 'LoginController.loginApp',
+  'POST /api/loginApp' : 'LoginController.loginApp',
 
 
   

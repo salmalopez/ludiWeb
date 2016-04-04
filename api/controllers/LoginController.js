@@ -41,7 +41,10 @@ module.exports = {
     loginApp: function(req,res){
         console.log(req.body);
         try{
-            UserService.getLoginApp()
+            UserService.getLoginApp(req.body.userName,function(response){
+                console.log(response.messagge);
+                res.send(response.messagge);
+            });
         }catch(err){
             res.render('500');
         }

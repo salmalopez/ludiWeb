@@ -34,11 +34,19 @@ module.exports = {
 		});
 	},
 	getLoginApp : function(user,next){
-		User.find({id:id}).exec(function(err,User){
+		User.find({userName:user}).exec(function(err,User){
 			if(err) throw err;
-			next({
-				messagge : 'OK'
-			})
+			if(User[0]){
+				console.log('existe');
+				next({
+					messagge : 'OK'
+				});
+			}else{
+				console.log('no existe');
+				next({
+					messagge : 'NO_OK'
+				})
+			}
 		})
 	}
 }

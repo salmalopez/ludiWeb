@@ -10,12 +10,14 @@ module.exports = {
 		try{
 			console.log(req.body);
 			UserService.saveUser(req.body, function(response){
+				console.log(response);
 				res.json(response);
 			});
 			
 		}catch(err){
 			res.render('500');
 		}
+
 	},
 	get : function(req,res){
 		try{

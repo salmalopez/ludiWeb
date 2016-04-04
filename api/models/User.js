@@ -19,6 +19,11 @@ module.exports = {
 			required : true,
 			minLength : 3
 		},
+		userName : {
+			type : 'string',
+			required : false,
+			minLength : 4
+		},
 
 		date: {
 			type: 'string',
