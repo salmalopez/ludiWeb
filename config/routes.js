@@ -59,23 +59,58 @@ module.exports.routes = {
   'DELETE /api/news/:id' : 'NewsController.destroy',
   'PUT /api/news' : 'NewsController.update',
 
-
+  //'GET /api/escuela' : 'EscuelasController.getSchool',
 
 
   'POST /api/user' : 'UserController.save',
   'GET /api/user' : 'UserController.get',
   'GET /api/user/:id' : 'UserController.get',
   'DELETE /api/user/:id' : 'UserController.destroy',
-  'PUT /api/user' : 'UserController.update'
+  'PUT /api/user' : 'UserController.update',
 
   /***************************************************************************
   *                                                                          *
-  * Custom routes here...                                                    *
-  *                                                                          *
-  * If a request to a URL doesn't match any of the custom routes above, it   *
-  * is matched against Sails route blueprints. See `config/blueprints.js`    *
-  * for configuration options and examples.                                  *
+  * Rutas MySQL                                                              *
   *                                                                          *
   ***************************************************************************/
+
+  /***************************************************************************
+  * INICIO DE SESION                                                         *
+  ***************************************************************************/
+
+  /***************************************************************************
+  * RUTAS USUARIOS                                                           *
+  ***************************************************************************/
+
+  'POST     /api/usuario'      : 'UsuarioController.crear',
+  'GET      /api/usuario'      : 'UsuarioController.consultarUsuarios',
+  'GET      /api/usuario/:id'  : 'UsuarioController.consultarUsuario',
+  'PUT      /api/usuario'      : 'UsuarioController.actualizar',
+  'DELETE   /api/usuario/:id'  : 'UsuarioController.borrar',
+
+  /***************************************************************************
+  * RUTAS NOTICIAS                                                           *
+  ***************************************************************************/
+
+  'POST     /api/noticia'      : 'NoticiaController.crear',
+  'GET      /api/noticia'      : 'NoticiaController.consultarNoticias',
+  'GET      /api/noticia/:id'  : 'NoticiaController.consultarNoticia',
+  'PUT      /api/noticia'      : 'NoticiaController.actualizar',
+  'DELETE   /api/noticia/:id'  : 'NoticiaController.borrar',
+
+  /***************************************************************************
+  * RUTAS ESCUELAS                                                           *
+  ***************************************************************************/
+
+  'POST     /api/escuela'      : 'EscuelaController.crear',
+  'GET      /api/escuela'      : 'EscuelaController.consultarEscuelas',
+  'GET      /api/escuela/:id'  : 'EscuelaController.consultarEscuela',
+  'PUT      /api/escuela'      : 'EscuelaController.actualizar',
+  'DELETE   /api/escuela/:id'  : 'EscuelaController.borrar',
+
+  /***************************************************************************
+  * RUTAS ESTATUS                                                            *
+  ***************************************************************************/
+
 
 };
