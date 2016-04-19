@@ -50,6 +50,7 @@ module.exports.connections = {
     database: 'ludi'
   },
 */
+
   someMysqlServer: {
     adapter: 'sails-mysql',
     host: 'localhost',
@@ -58,6 +59,7 @@ module.exports.connections = {
     password: 'root',
     database: 'ludi'
   },
+  
 
   /***************************************************************************
   *                                                                          *

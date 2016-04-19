@@ -6,6 +6,17 @@
  */
 
 module.exports = {
+	crear : function(req,res){
+		try{
+			console.log(req.body);
+			estatusService.crear(req.body,function(response){
+				res.json(response);
+			});
+		}catch(err){
+			res.json(err);
+		}
+	}
+
 	
 };
 

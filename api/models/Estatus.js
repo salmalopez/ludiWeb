@@ -7,8 +7,29 @@
 
 module.exports = {
 
-  attributes: {
-
-  }
+  tableName: 'estatus',
+	adapter: 'sails-mysql',
+	migrate: 'safe',
+	autoCreatedAt: false,
+	autoUpdatedAt: false,
+	attributes: {
+		idestatus : {
+			primaryKey: true,
+			type : 'integer',
+			required : false
+		},
+		contestada : {
+			type : 'string',
+			required : true
+		},
+		idusuario : {
+			type : 'integer',
+			required : true
+		},
+		idactividad : {
+			type : 'integer',
+			required : true
+		}
+	}
 };
 

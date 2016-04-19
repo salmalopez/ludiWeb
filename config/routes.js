@@ -112,5 +112,12 @@ module.exports.routes = {
   * RUTAS ESTATUS                                                            *
   ***************************************************************************/
 
+  'POST      /api/estatus'     : 'EstatusController.crear',   
+
+
+
+
+
+
 
 };
