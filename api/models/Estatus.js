@@ -20,7 +20,7 @@ module.exports = {
 		},
 		contestada : {
 			type : 'string',
-			required : true
+			required : false
 		},
 		idusuario : {
 			type : 'integer',
