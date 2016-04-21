@@ -14,6 +14,7 @@ angular.module('news-module',['newsService','angularUtils.directives.dirPaginati
 
 		function getNews(){
 			News.get().then(function(response){
+				console.log(response);
 				$scope.newsA = response.data;
 			});
 		}

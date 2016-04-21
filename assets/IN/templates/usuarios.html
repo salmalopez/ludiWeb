@@ -31,15 +31,15 @@
 								</tr>
 							</thead>
 							<tr dir-paginate="u in users | filter:search | itemsPerPage: pageSize" current-page="currentPage">
-								<th class="col-md-5">{{u.name}} {{u.lastName}}</th>
-								<th class="col-md-2">{{u.date}}</th>
-								<th class="col-md-2">{{u.weight}}</th>
-								<th class="col-md-2">{{u.height}}</th>
+								<th class="col-md-5">{{u.nombre}}</th>
+								<th class="col-md-2">{{u.edad}}</th>
+								<th class="col-md-2">{{u.peso}}</th>
+								<th class="col-md-2">{{u.estatura}}</th>
 								<th class="col-md-1">
-									<a href="" data-toggle="modal" data-target="#myModal" ng-click="idUser(u.id)">
+									<a href="" data-toggle="modal" data-target="#myModal" ng-click="idUser(u.idusuario)">
 										<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 									</a>
-									<a href="" data-toggle="modal" data-target="#daleteModal" ng-click="modalDelete(u.id)">
+									<a href="" data-toggle="modal" data-target="#daleteModal" ng-click="modalDelete(u.idusuario)">
 										<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 									</a>
 								</th>
@@ -57,7 +57,7 @@
    				<div class="panel panel-default bg-panel">
 					<div class="panel-body">
 						<form name="userForm">
-							<input type="text" name="userName" ng-model="user.name" class="form-control" placeholder="Nombre" ng-minlength="3" required>
+							<input type="text" name="userName" ng-model="user.nombre" class="form-control" placeholder="Nombre" ng-minlength="3" required>
 							<div role="alert">
 								<span class="error" ng-show="userForm.userName.$error.required">
 									*Campo obligatorio
@@ -66,16 +66,16 @@
 									Mínimo 3 caracteres
 								</span>
 							</div>
-							<input type="text" name="userLastName" ng-model="user.lastName" class="form-control" placeholder="Apellido" ng-minlength="3" required>
+							<input type="text" name="userNick" ng-model="user.usuario" class="form-control" placeholder="Nombre" ng-minlength="3" required>
 							<div role="alert">
-								<span class="error" ng-show="userForm.userLastName.$error.required">
+								<span class="error" ng-show="userForm.userNick.$error.required">
 									*Campo obligatorio
 								</span>
-								<span class="error" ng-show="userForm.userLastName.$error.minlength">
+								<span class="error" ng-show="userForm.userNick.$error.minlength">
 									Mínimo 3 caracteres
 								</span>
 							</div>
-							<input type="text" name="userDate" ng-model="user.date" class="form-control" placeholder="Fecha de nacimiento" ng-minlength="4" required>
+							<input type="text" name="userDate" ng-model="user.edad" class="form-control" placeholder="Fecha de nacimiento" ng-minlength="1" required>
 							<div role="alert">
 								<span class="error" ng-show="userForm.userDate.$error.required">
 									*Campo obligatorio
@@ -84,7 +84,7 @@
 									Mínimo 4 caracteres
 								</span>
 							</div>
-							<input type="text" name="userWeight" ng-model="user.weight" class="form-control" placeholder="Peso" min-length="3" required>
+							<input type="text" name="userWeight" ng-model="user.peso" class="form-control" placeholder="Peso" min-length="2" required>
 							<div role="alert">
 								<span class="error" ng-show="userForm.userWeight.$error.required">
 									*Campo obligatorio
@@ -93,13 +93,23 @@
 									Mínimo 3 caracteres
 								</span>
 							</div>
-							<input type="text" name="userHeight" ng-model="user.height" class="form-control" placeholder="Estatura" ng-minlength="3" required>
+							<input type="text" name="userHeight" ng-model="user.estatura" class="form-control" placeholder="Estatura" ng-minlength="2" required>
 							<div role="alert">
 								<span class="error" ng-show="userForm.userHeight.$error.required">
 									*Campo obligatorio
 								</span>
 								<span class="error" ng-show="userForm.userHeight.$error.minlength">
 									Mínimo 3 caracteres
+								</span>
+							</div>
+							<select name="userType" ng-model="user.idtipousuario" class="form-control" required>
+								<option></option>
+								<option value="1">Administrador</option>
+								<option value="2">Usuario</option>
+							</select>
+							<div role="alert">
+								<span class="error" ng-show="userForm.userType.$error.required">
+									*Campo obligatorio
 								</span>
 							</div>
 							<button class="button" ng-disabled="userForm.$invalid" ng-click="submit()">Registrar</button>
@@ -148,11 +158,10 @@
       <div class="modal-body">
         <div class="panel panel-default bg-panel">
 			<div class="panel-body">
-				<input type="text" ng-model="userU.name" class="form-control" placeholder="Nombre">
-				<input type="text" ng-model="userU.lastName" class="form-control" placeholder="Apellido">
-				<input type="text" ng-model="userU.date" class="form-control" placeholder="Fecha de nacimiento">
-				<input type="text" ng-model="userU.weight" class="form-control" placeholder="Peso">
-				<input type="text" ng-model="userU.height" class="form-control" placeholder="Estatura">
+				<input type="text" ng-model="userU.nombre" class="form-control" placeholder="Nombre">
+				<input type="text" ng-model="userU.edad" class="form-control" placeholder="Fecha de nacimiento">
+				<input type="text" ng-model="userU.peso" class="form-control" placeholder="Peso">
+				<input type="text" ng-model="userU.estatura" class="form-control" placeholder="Estatura">
 			</div>
 		</div>
       </div>

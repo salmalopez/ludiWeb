@@ -48,5 +48,27 @@ module.exports = {
 		}catch(err){
 			return next(err);
 		}
+	},
+	loginApp : function(usuario,next){
+		try{
+			Usuario.find({usuario:usuario}).exec(function(err,user){
+				if(err) throw err;
+				if(user[0]){
+					console.log('existe');
+					next(user[0].idusuario);
+				}else{
+					console.log('no existe');
+					next(-1);
+				}
+			})
+		}catch(err){
+			return next(err);
+		}
 	}
 }
+
+
+
+
+
+

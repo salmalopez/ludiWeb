@@ -20,7 +20,6 @@ module.exports = {
 	  		res.view('login',{layout:'login'});
 	  	}
   	}catch(err){
-  		console.log(err);
   		res.render('500');
   	}
   }

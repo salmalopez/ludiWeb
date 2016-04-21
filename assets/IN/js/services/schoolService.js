@@ -2,19 +2,19 @@ angular.module('schoolService' , [])
 	.factory('School', function($http){
 		return {
 			save: function(data){
-				return $http.post('/api/school', data);
+				return $http.post('/api/escuela', data);
 			},
 			get : function(){
-				return $http.get('/api/school');
+				return $http.get('/api/escuela');
 			},
 			getSchool : function(id){
-				return $http.get('/api/school/'+id);
+				return $http.get('/api/escuela/'+id);
 			},
 			updateSchool : function(data){
-				return $http.put('/api/school/',data);
+				return $http.put('/api/escuela/',data);
 			},
 			destroy : function(id){
-				return $http.delete('/api/school/'+id)
+				return $http.delete('/api/escuela/'+id)
 			}
 		}
 	})

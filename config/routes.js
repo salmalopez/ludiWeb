@@ -28,22 +28,9 @@ module.exports.routes = {
   * etc. depending on your default view engine) your home page.              *
   *                                                                          *
   * (Alternatively, remove this and add an `index.html` file in your         *
-  * `assets` directory)         jkgjjh                                             *
+  * `assets` directory)                                                      *
   *                                                                          *
   ***************************************************************************/
-
-  
-  'GET /': 'AppController.main',
-  'GET /:param': 'AppController.main',
-
-  
-
-  'GET /api/profile': 'LoginController.profile',
-  'POST /api/login': 'LoginController.login',
-  '/api/logout': 'LoginController.logout',
-  'POST /api/loginApp' : 'LoginController.loginApp',
-
-
   
   'POST /api/school' : 'SchoolsController.save',
   'GET /api/school' : 'SchoolsController.get',
@@ -52,14 +39,6 @@ module.exports.routes = {
   'PUT /api/school' : 'SchoolsController.update',
 
 
-
-  'POST /api/news' : 'NewsController.save',
-  'GET /api/news' : 'NewsController.get',
-  'GET /api/news/:id' : 'NewsController.get',
-  'DELETE /api/news/:id' : 'NewsController.destroy',
-  'PUT /api/news' : 'NewsController.update',
-
-  //'GET /api/escuela' : 'EscuelasController.getSchool',
 
 
   'POST /api/user' : 'UserController.save',
@@ -77,6 +56,12 @@ module.exports.routes = {
   /***************************************************************************
   * INICIO DE SESION                                                         *
   ***************************************************************************/
+  '/api/logout'                : 'LoginController.logout',
+  'GET      /'                 : 'AppController.main',
+  'GET      /:param'           : 'AppController.main',
+  'POST     /api/login'        : 'LoginController.login',
+  'GET      /api/profile'      : 'LoginController.profile',
+  'POST     /api/loginApp'     : 'LoginController.loginApp',
 
   /***************************************************************************
   * RUTAS USUARIOS                                                           *
@@ -109,15 +94,19 @@ module.exports.routes = {
   'DELETE   /api/escuela/:id'  : 'EscuelaController.borrar',
 
   /***************************************************************************
+  * RUTAS ESTADOS                                                            *
+  ***************************************************************************/
+
+  'POST     /api/estado'      : 'EstadoController.crear',
+  'GET      /api/estado'      : 'EstadoController.consultarEstados',
+  'GET      /api/estado/:id'  : 'EstadoController.consultarEstado',
+  'PUT      /api/estado'      : 'EstadoController.actualizar',
+  'DELETE   /api/estado/:id'  : 'EstadoController.borrar',
+
+  /***************************************************************************
   * RUTAS ESTATUS                                                            *
   ***************************************************************************/
 
   'POST      /api/estatus'     : 'EstatusController.crear',   
-
-
-
-
-
-
 
 };

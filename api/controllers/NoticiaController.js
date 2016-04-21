@@ -7,6 +7,7 @@
 
 module.exports = {
 	crear : function(req,res){
+		console.log(req.body);
 		try{
 			noticiaService.crear(req.body,function(response){
 				res.json(response);

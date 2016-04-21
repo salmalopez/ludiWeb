@@ -21,6 +21,7 @@ module.exports = {
                     user: user
                 });
             }
+            console.log(user);
             req.logIn(user, function(err) {
                 if (err) res.send(err);
                 return res.send({
@@ -41,9 +42,9 @@ module.exports = {
     loginApp: function(req,res){
         console.log(req.body);
         try{
-            UserService.getLoginApp(req.body.userName,function(response){
-                console.log(response.messagge);
-                res.send(response.messagge);
+            usuarioService.loginApp(req.body.usuario,function(response){
+                console.log(response);
+                res.json(response);
             });
         }catch(err){
             res.render('500');

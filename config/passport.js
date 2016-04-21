@@ -3,11 +3,12 @@ LocalStrategy = require('passport-local').Strategy,
 bcrypt = require('bcrypt');
 
 passport.serializeUser(function(user, done) {
-    done(null, user.id);
+    console.log(user);
+    done(null, user.idusuario);
 });
 
 passport.deserializeUser(function(id, done) {
-    User.findOne({ id: id } , function (err, user) {
+    Usuario.findOne({ idusuario: id } , function (err, user) {
         done(err, user);
     });
 });
@@ -18,10 +19,10 @@ passport.use(new LocalStrategy({
   },
   function(email, password, done) {
 
-    User.findOne({ email: email }, function (err, user) {
+    Usuario.findOne({ usuario: email }, function (err, user) {
       if (err) { return done(err); }
       if (!user) {
-        return done(null, false, { message: 'Email incorrecto.' });
+        return done(null, false, { message: 'Usuario incorrecto.' });
       }
 
       if(password != user.password){
@@ -29,11 +30,12 @@ passport.use(new LocalStrategy({
               message: 'Contraseña incorrecta.'
             });
       }else{
+        console.log("antes de tronar");
         var returnUser = {
-            email: user.email,
-            createdAt: user.createdAt,
-            id: user.id
+            email: user.usuario,
+            idusuario: user.idusuario
           };
+          console.log("ya trone",returnUser);
           return done(null, returnUser, {
             message: 'OK'
           });

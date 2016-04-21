@@ -23,7 +23,8 @@ module.exports = {
 		},
 		usuario : {
 			type : 'string',
-			required : true
+			required : true,
+			unique: true
 		},
 		password : {
 			type : 'int',

@@ -14,6 +14,7 @@ angular.module('user-module',['user.module'])
 		
 		function getUsers(){
 			User.get().then(function(response){
+				console.log(response);
 				$scope.users = response.data;
 				console.log(response);
 			});
