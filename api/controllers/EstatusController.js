@@ -15,6 +15,17 @@ module.exports = {
 		}catch(err){
 			res.json(err);
 		}
+	},
+	consultarEstatus : function(req,res){
+		try{
+			estatusService.consultarEstatus(req.param('id'),function(response){
+				console.log(response);
+				res.json(response);
+			});
+		}catch(err){
+			console.log(err);
+			res.json(err);
+		}
 	}
 
 	
