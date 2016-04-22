@@ -54,10 +54,8 @@ module.exports = {
 			Usuario.find({usuario:usuario}).exec(function(err,user){
 				if(err) throw err;
 				if(user[0]){
-					console.log('existe');
 					next(user[0].idusuario);
 				}else{
-					console.log('no existe');
 					next(-1);
 				}
 			})

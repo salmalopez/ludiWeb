@@ -43,11 +43,11 @@ module.exports = {
 			required : false
 		},
 		avance : {
-			type : 'string',
+			type : 'datetime',
 			required : false
 		},
 		creacion : {
-			type : 'string',
+			type : 'datetime',
 			required : true
 		},
 		idescuela : {

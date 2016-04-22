@@ -8,6 +8,7 @@
 module.exports = {
 	crear : function(req,res){
 		try{
+			req.body.creacion = new Date();
 			console.log(req.body);
 			usuarioService.crear(req.body,function(response){
 				res.json(response);
