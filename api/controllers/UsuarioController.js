@@ -41,6 +41,7 @@ module.exports = {
 	actualizar : function(req,res){
 		try{
 			usuarioService.actualizar(req.body,function(response){
+				console.log(response);
 				res.json(response);
 			});
 		}catch(err){

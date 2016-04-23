@@ -7,7 +7,7 @@
 
 module.exports = {
 	crear : function(req,res){
-		console.log(req.body);
+		req.body.fecha = new Date();
 		try{
 			noticiaService.crear(req.body,function(response){
 				res.json(response);
@@ -52,6 +52,16 @@ module.exports = {
 		try{
 			noticiaService.borrar(req.param('id'),function(response){
 				res.json(response);
+			});
+		}catch(err){
+			console.log(err);
+			res.json(err);
+		}
+	},
+	longitudNoticia : function(req,res){
+		try{
+			noticiaService.consultarNoticiasLongitud(function(response){
+				res.json(response.length);
 			});
 		}catch(err){
 			console.log(err);

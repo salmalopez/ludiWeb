@@ -49,4 +49,14 @@ module.exports = {
 			return next(err);
 		}
 	},
+	consultarNoticiasLongitud : function(next){
+		try{
+			Noticia.find().exec(function(err,response){
+				if(err) next(err);
+				next(response);
+			});
+		}catch(err){
+			next(err);
+		}
+	}
 }

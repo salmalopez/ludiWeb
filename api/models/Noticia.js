@@ -22,7 +22,7 @@ module.exports = {
 			required : true
 		},
 		fecha : {
-			type : 'string',
+			type : 'date',
 			required : true
 		},
 		idusuario : {
