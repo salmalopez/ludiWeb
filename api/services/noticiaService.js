@@ -58,5 +58,15 @@ module.exports = {
 		}catch(err){
 			next(err);
 		}
+	},
+	consultarTextoNoticia : function(id,next){
+		try{
+			Noticia.find({idnoticia:id}).exec(function(err,response){
+				if(err) next(err);
+				next(response);
+			});
+		}catch(err){
+			return next(err);
+		}
 	}
 }

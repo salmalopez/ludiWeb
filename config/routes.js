@@ -31,21 +31,7 @@ module.exports.routes = {
   * `assets` directory)                                                      *
   *                                                                          *
   ***************************************************************************/
-  
-  'POST /api/school' : 'SchoolsController.save',
-  'GET /api/school' : 'SchoolsController.get',
-  'GET /api/school/:id' : 'SchoolsController.get',
-  'DELETE /api/school/:id' : 'SchoolsController.destroy',
-  'PUT /api/school' : 'SchoolsController.update',
 
-
-
-
-  'POST /api/user' : 'UserController.save',
-  'GET /api/user' : 'UserController.get',
-  'GET /api/user/:id' : 'UserController.get',
-  'DELETE /api/user/:id' : 'UserController.destroy',
-  'PUT /api/user' : 'UserController.update',
 
   /***************************************************************************
   *                                                                          *
@@ -80,6 +66,7 @@ module.exports.routes = {
   'POST     /api/noticia'                     : 'NoticiaController.crear',
   'GET      /api/noticia'                     : 'NoticiaController.consultarNoticias',
   'GET      /api/noticia/:id'                 : 'NoticiaController.consultarNoticia',
+  'GET      /api/noticia/metodo/texto/:id'    : 'NoticiaController.textoNoticia',
   'GET      /api/noticia/metodo/longitud'     : 'NoticiaController.longitudNoticia',
   'PUT      /api/noticia'                     : 'NoticiaController.actualizar',
   'DELETE   /api/noticia/:id'                 : 'NoticiaController.borrar',

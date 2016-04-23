@@ -9,10 +9,16 @@ module.exports = {
 	crear : function(req,res){
 		try{
 			req.body.creacion = new Date();
-			console.log(req.body);
-			usuarioService.crear(req.body,function(response){
-				res.json(response);
+			usuarioValidate.vacio(req.body,function(response){
+				if(response=="OK"){
+					usuarioService.crear(req.body,function(response){
+						res.json(response);
+					});
+				}else{
+					res.json(response);
+				}
 			});
+			
 		}catch(err){
 			console.log(err);
 			res.json(err);
