@@ -71,7 +71,6 @@ module.exports = {
 	textoNoticia : function(req,res){
 		try{
 			noticiaService.consultarTextoNoticia(req.param('id'),function(response){
-				console.log(response);
 				res.json(response[0].contenido);
 			});
 		}catch(err){
