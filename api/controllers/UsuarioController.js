@@ -11,8 +11,10 @@ module.exports = {
 			console.log(req.body);
 			req.body.creacion = new Date();
 			if(!req.body.peso){
-				console.log("entro aqui al pesop");
 				req.body.peso = "0.0";
+			}
+			if(!req.body.estatura ){
+				req.body.estatura = "0";
 			}
 			usuarioValidate.vacio(req.body,function(response){
 				if(response=="OK"){

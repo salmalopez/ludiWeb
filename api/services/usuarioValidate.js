@@ -1,6 +1,5 @@
 module.exports = {
 	vacio : function(usuario,next){
-		console.log("validacion",usuario);
 		try{
 			if(!usuario.nombre || !usuario.usuario || !usuario.edad){
 				next("Los campos con * son obligatorios");
