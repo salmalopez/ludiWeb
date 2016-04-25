@@ -8,7 +8,12 @@
 module.exports = {
 	crear : function(req,res){
 		try{
+			console.log(req.body);
 			req.body.creacion = new Date();
+			if(!req.body.peso){
+				console.log("entro aqui al pesop");
+				req.body.peso = "0.0";
+			}
 			usuarioValidate.vacio(req.body,function(response){
 				if(response=="OK"){
 					usuarioService.crear(req.body,function(response){
