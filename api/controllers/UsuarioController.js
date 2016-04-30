@@ -19,7 +19,7 @@ module.exports = {
 			usuarioValidate.vacio(req.body,function(response){
 				if(response=="OK"){
 					usuarioService.crear(req.body,function(response){
-						res.json("OK");
+						return res.json(response);
 					});
 				}else{
 					res.json(response);

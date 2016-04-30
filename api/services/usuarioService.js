@@ -2,8 +2,8 @@ module.exports = {
 	crear : function(usuario,next){
 		try{
 			Usuario.create(usuario).exec(function(err,response){
-				if(err) next(err);
-				next(response);
+				if(err) return next(err);
+				return next("OK");
 			});
 		}catch(err){
 			next(err);
