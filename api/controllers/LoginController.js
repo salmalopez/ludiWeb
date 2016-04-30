@@ -14,8 +14,12 @@ module.exports = {
         }
     },
     login: function(req, res) {
+        console.log("entro al login");
         passport.authenticate('local', function(err, user, info) {
             if ((err) || (!user)) {
+                console.log("info",info);
+                console.log("usuario",user);
+                console.log("error",err);
                 return res.send({
                     message: info.message,
                     user: user

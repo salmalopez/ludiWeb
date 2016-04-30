@@ -10,12 +10,14 @@ angular.module('user-module',['user.module'])
 		$scope.successUpdate = false;
 		$scope.currentPage = 1;
   		$scope.pageSize = 4;
+  		
 		getUsers();
 		
 		function getUsers(){
 			User.get().then(function(response){
 				console.log(response);
 				$scope.users = response.data;
+
 				console.log(response);
 			});
 		}

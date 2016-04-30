@@ -27,14 +27,17 @@
 									<th>Edad</th>
 									<th>Peso</th>
 									<th>Estatura</th>
+									<th>IMC</th>
 									<th></th>
 								</tr>
 							</thead>
 							<tr dir-paginate="u in users | filter:search | itemsPerPage: pageSize" current-page="currentPage">
 								<th class="col-md-5">{{u.nombre}}</th>
-								<th class="col-md-2">{{u.edad}}</th>
-								<th class="col-md-2">{{u.peso}}</th>
+								<th class="col-md-1">{{u.edad}}</th>
+								<th class="col-md-1">{{u.peso}}</th>
 								<th class="col-md-2">{{u.estatura}}</th>
+								<th ng-if="u.estatura && u.peso" class="col-md-2">{{((u.peso/(u.estatura*100))/(u.estatura*100))*10000 | number:2}}</th>
+								<th ng-if="!u.estatura || !u.peso" class="col-md-2">alo imc</th>
 								<th class="col-md-1">
 									<a href="" data-toggle="modal" data-target="#myModal" ng-click="idUser(u.idusuario)">
 										<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
@@ -93,11 +96,8 @@
 									Mínimo 3 caracteres
 								</span>
 							</div>
-							<input type="text" name="userHeight" ng-model="user.estatura" class="form-control" placeholder="Estatura" ng-minlength="2" required>
+							<input type="text" name="userHeight" ng-model="user.estatura" class="form-control" placeholder="Estatura" ng-minlength="2">
 							<div role="alert">
-								<span class="error" ng-show="userForm.userHeight.$error.required">
-									*Campo obligatorio
-								</span>
 								<span class="error" ng-show="userForm.userHeight.$error.minlength">
 									Mínimo 3 caracteres
 								</span>

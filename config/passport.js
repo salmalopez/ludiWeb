@@ -18,9 +18,9 @@ passport.use(new LocalStrategy({
     passwordField: 'password'
   },
   function(email, password, done) {
-
     Usuario.findOne({ usuario: email }, function (err, user) {
       if (err) { return done(err); }
+
       if (!user) {
         return done(null, false, { message: 'Usuario incorrecto.' });
       }
@@ -30,12 +30,11 @@ passport.use(new LocalStrategy({
               message: 'Contraseña incorrecta.'
             });
       }else{
-        console.log("antes de tronar");
         var returnUser = {
             email: user.usuario,
             idusuario: user.idusuario
           };
-          console.log("ya trone",returnUser);
+          
           return done(null, returnUser, {
             message: 'OK'
           });

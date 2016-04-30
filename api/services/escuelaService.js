@@ -11,7 +11,7 @@ module.exports = {
 	},
 	consultarEscuela : function(id,next){
 		try{
-			Escuela.find({idescuela:id}).exec(function(err,response){
+			Escuela.find({idestado:id}).exec(function(err,response){
 				if(err) next(err);
 				next(response);
 			});
