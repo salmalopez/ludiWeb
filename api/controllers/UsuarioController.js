@@ -8,7 +8,6 @@
 module.exports = {
 	crear : function(req,res){
 		try{
-			console.log(req.body);
 			req.body.creacion = new Date();
 			if(!req.body.peso){
 				req.body.peso = "0.0";
