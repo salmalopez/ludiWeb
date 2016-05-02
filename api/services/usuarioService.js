@@ -24,7 +24,7 @@ module.exports = {
 	},
 	consultarUsuarios : function(next){
 		try{
-			Usuario.find({idtipousuario:2}).exec(function(err,response){
+			Usuario.find({idtipousuario:2}).populate('owner').exec(function(err,response){
 				if(err) next(err);
 				next(response);
 			});

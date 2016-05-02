@@ -60,7 +60,11 @@ module.exports = {
 		noticia: {
       		collection: 'noticia',
       		via: 'owner'
-    	}
+    	},
+    	owner : {
+			model: 'escuela',
+        	columnName: 'idescuela'
+		}
 	}
 };
 

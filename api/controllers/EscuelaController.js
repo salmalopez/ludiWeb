@@ -8,6 +8,7 @@
 module.exports = {
 	crear : function(req,res){
 		try{
+			console.log(req.body);
 			escuelaService.crear(req.body,function(response){
 				res.json(response);
 			});
@@ -29,6 +30,16 @@ module.exports = {
 	consultarEscuelas : function(req,res){
 		try{
 			escuelaService.consultarEscuelas(function(response){
+				res.json(response);
+			});
+		}catch(err){
+			console.log(err);
+			res.json(err);
+		}
+	},
+	infoEscuela : function(req,res){
+		try{
+			escuelaService.infoEscuela(req.param('id'),function(response){
 				res.json(response);
 			});
 		}catch(err){

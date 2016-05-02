@@ -78,6 +78,7 @@ module.exports.routes = {
   'POST     /api/escuela'                     : 'EscuelaController.crear',
   'GET      /api/escuela'                     : 'EscuelaController.consultarEscuelas',
   'GET      /api/escuela/:id'                 : 'EscuelaController.consultarEscuela',
+  'GET      /api/escuela/metodo/info/:id'     : 'EscuelaController.infoEscuela',
   'PUT      /api/escuela'                     : 'EscuelaController.actualizar',
   'DELETE   /api/escuela/:id'                 : 'EscuelaController.borrar',
 

@@ -19,6 +19,16 @@ module.exports = {
 			next(err);
 		}
 	},
+	infoEscuela : function(id,next){
+		try{
+			Escuela.find({idescuela:id}).exec(function(err,response){
+				if(err) next(err);
+				next(response);
+			});
+		}catch(err){
+			next(err);
+		}
+	},
 	consultarEscuelas : function(next){
 		try{
 			Escuela.find().populate('owner').exec(function(err,response){

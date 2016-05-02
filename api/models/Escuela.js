@@ -28,7 +28,11 @@ module.exports = {
 		owner : {
 			model: 'estado',
         	columnName: 'idestado'
-		}
+		},
+		usuario: {
+      		collection: 'usuario',
+      		via: 'owner'
+    	}
 	}
 };
 

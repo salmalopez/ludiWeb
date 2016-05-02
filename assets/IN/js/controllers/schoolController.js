@@ -1,6 +1,7 @@
 angular.module('school-module',['schoolService','angularUtils.directives.dirPagination'])
 	.controller('school-controller',function($scope, School){
 		$scope.school = {};
+		$scope.states = {};
 		$scope.schoolU = {};
 		$scope.schoolD = {};
 		$scope.schools = [];
@@ -9,12 +10,23 @@ angular.module('school-module',['schoolService','angularUtils.directives.dirPagi
 		$scope.successDelete = false;
 		$scope.successUpdate = false;
 		$scope.currentPage = 1;
-  		$scope.pageSize = 4;
+  		$scope.pageSize = 10;
+  		$scope.BD = false;
 		getSchools();
+		getStates();
 
 		function getSchools(){
 			School.get().then(function(response){
+				console.log(response);
+				$scope.BD = true;
 				$scope.schools = response.data;
+			});
+		}
+
+		function getStates(){
+			School.getStates().then(function(response){
+				$scope.states = response.data;
+				console.log($scope.states);
 			});
 		}
 
@@ -29,6 +41,7 @@ angular.module('school-module',['schoolService','angularUtils.directives.dirPagi
 		$scope.idSchool = function(id){
 			console.log(id);
 			School.getSchool(id).then(function(response){
+				console.log(response);
 				$scope.schoolU = response.data[0];
 			});
 		};
@@ -54,6 +67,7 @@ angular.module('school-module',['schoolService','angularUtils.directives.dirPagi
 			console.log($scope.school);
 			School.save($scope.school).then(function(response){
 				$scope.successForm = true;
+				console.log(response);
 				getSchools();
 			},function(err){
 				console.log(err);
