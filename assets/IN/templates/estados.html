@@ -1,0 +1,121 @@
+<section class="bg-user animated fadeIn">
+   <div class="container">
+		<div class="row animated rubberBand" ng-if="successForm">
+			<div class="col-md-12">
+				<div class="alert alert-success alert-dismissible" role="alert">
+				  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				  Se ha guardado el estado de manera correcta.
+				</div>
+			</div>
+		</div>
+   		<div class="row">
+   			<div class="col-md-9">
+   				<div class="panel panel-default bg-panel animated rubberBand">
+					<div class="panel-body">
+						<input type="text" class="form-control" ng-model="search" placeholder="Búsqueda">
+						<input  type="text" class="form-control" ng-model="pageSize" placeholder="Resultados por página">
+						<label>Resultados por página</label>
+					</div>
+				</div>
+				<div class="panel panel-default bg-panel animated rubberBand">
+					<div class="panel-body">
+						<h2 ng-if="states.length == 0">No hay estados registrados</h2>
+						<table ng-if="states.length > 0" class="table table-responsive col-md-12">
+							<thead>
+								<tr class="text-center">
+									<th>Nombre </th>
+									<th></th>
+								</tr>
+							</thead>
+							<tr dir-paginate="s in states | filter:search | itemsPerPage: pageSize" current-page="currentPage">
+								<th class="col-md-10">{{s.nombre}}</th>
+								<th class="col-md-2">
+									<a href="" data-toggle="modal" data-target="#myModal" ng-click="idState(s.idestado)">
+										<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+									</a>
+									<a href="" data-toggle="modal" data-target="#daleteModal" ng-click="modalDelete(s.idestado)">
+										<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+									</a>
+								</th>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div ng-controller="pagination.controller" class="other-controller">
+					<div class="text-center">
+						<dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="IN/templates/dirPagination.tpl.html"></dir-pagination-controls>
+					</div>
+				</div>
+   			</div>
+   			<div class="col-md-3">
+   				<div class="panel panel-default bg-panel">
+					<div class="panel-body">
+						<form name="userForm">
+							<input type="text" name="userName" ng-model="state.nombre" class="form-control" placeholder="Nombre" ng-minlength="3" required>
+							<div role="alert">
+								<span class="error" ng-show="userForm.userName.$error.required">
+									*Campo obligatorio
+								</span>
+								<span class="error" ng-show="userForm.userName.$error.minlength">
+									Mínimo 3 caracteres
+								</span>
+							</div>
+							
+							<button class="button" ng-disabled="userForm.$invalid" ng-click="submit()">Registrar</button>
+						</form>
+						
+					</div>
+				</div>
+   			</div>
+   		</div>
+   </div>
+</section>
+<div class="modal fade bs-example-modal-sm" id="daleteModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+    	<div class="row animated rubberBand" ng-if="successDelete">
+			<div class="col-md-12">
+				<div class="alert alert-success alert-dismissible" role="alert">
+				  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				  Se ha eliminado el usuario de manera correcta.
+				</div>
+			</div>
+		</div>
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel">¿Está seguro que desea eliminar el usuario seleccionado?</h4>
+		</div>
+      <div class="modal-footer">
+        <button type="button" class="btn button" data-dismiss="modal">Cerrar</button>
+        <button ng-if="!successDelete" type="button" ng-click="remove(schoolD)" class="btn button" ng-click="update()">Sí</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="row animated rubberBand" ng-if="successUpdate">
+			<div class="col-md-12">
+				<div class="alert alert-success alert-dismissible" role="alert">
+				  <button type="button" ng-click="updateFalse()" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				  Se ha actualizado el usuario de manera correcta.
+				</div>
+			</div>
+		</div>
+      <div class="modal-body">
+        <div class="panel panel-default bg-panel">
+			<div class="panel-body">
+				<input type="text" ng-model="stateU.nombre" class="form-control" placeholder="Nombre">
+			</div>
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn button" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn button" ng-click="update()">Actualizar</button>
+      </div>
+    </div>
+  </div>
+</div>
+

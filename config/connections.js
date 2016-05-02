@@ -59,7 +59,7 @@ module.exports.connections = {
     password: 'root',
     database: 'ludi'
   },
-  
+ 
 
   /***************************************************************************
   *                                                                          *
