@@ -8,6 +8,7 @@
 module.exports = {
 	crear : function(req,res){
 		req.body.fecha = new Date();
+		req.body.idusuario = req.user.idusuario;
 		try{
 			noticiaService.crear(req.body,function(response){
 				res.json(response);
